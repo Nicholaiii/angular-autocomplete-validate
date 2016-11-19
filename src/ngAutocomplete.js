@@ -39,15 +39,10 @@ angular.module("ngAutocompleteValidate", [])
 
                 if (scope.gPlace == undefined) {
                     scope.gPlace = new google.maps.places.Autocomplete(element[0], {});
-                    if (scope.options) {
-                        if (scope.options.types) {
-                            let types = []
-                            types.push(scope.options.types)
-                            scope.gPlace.setTypes(types)
-                        } else {
-                            scope.gPlace.setTypes(['address'])
-                        }
-
+                    if (scope.options && scope.options.types) {
+                        scope.gPlace.setTypes(scope.options.types)
+                    } else {
+                        scope.gPlace.setTypes(['address'])
                     }
                 }
 
