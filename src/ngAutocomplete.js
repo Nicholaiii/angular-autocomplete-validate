@@ -41,7 +41,7 @@ angular.module("ngAutocompleteValidate", [])
                     if (scope.options && scope.options.types) {
                         scope.gPlace.setTypes(scope.options.types)
                     }else{
-                      scope.gPlace.setTypes([])
+                      scope.gPlace.setTypes(['address'])
                     }
                 }
 
@@ -126,7 +126,7 @@ angular.module("ngAutocompleteValidate", [])
                 function checkFields(a, b) {
                   let valid = false
                     if (!scope.options || scope.options.validation || scope.options.validation == undefined) {
-                        if (a && a.city && a.country)
+                        if (a && a.street && a.city && a.country && b.street_number)
                             valid = true
                         else
                             valid = false
