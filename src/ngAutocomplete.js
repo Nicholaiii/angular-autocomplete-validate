@@ -124,7 +124,7 @@ angular.module("ngAutocompleteValidate", [])
                 }
 
                 function checkFields(a, b) {
-                  let valid = false
+                  var valid = false
                     if (!scope.options || scope.options.validation || scope.options.validation == undefined) {
                         if (a && a.street && a.city && a.country && b.street_number)
                             valid = true
